@@ -1,0 +1,129 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"1.0.0"] -- update-in :plugins conj [cider/cider-nrepl,"0.28.5"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉prob-2.core꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉prob-2.core꞉> 
+()
+clj꞉prob-2.core꞉> 
+; Syntax error compiling def at (c:\programming\aoc2021\prob-2\src\prob_2\core.clj:11:1).
+; Too few arguments to def
+clj꞉prob-2.core꞉> 
+#'prob-2.core/input-file
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+["forward" "3"]
+clj꞉prob-2.core꞉> 
+; Execution error (NumberFormatException) at java.lang.Integer/parseInt (Integer.java:630).
+; Cannot parse null string
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+[3 0]
+clj꞉prob-2.core꞉> 
+[0 3]
+clj꞉prob-2.core꞉> 
+[0 -3]
+clj꞉prob-2.core꞉> 
+; Syntax error compiling at (c:\programming\aoc2021\prob-2\src\prob_2\core.clj:16:16).
+; No such namespace: str
+clj꞉prob-2.core꞉> 
+; Execution error (NumberFormatException) at java.lang.Integer/parseInt (Integer.java:630).
+; Cannot parse null string
+clj꞉prob-2.core꞉> 
+; Syntax error compiling at (c:\programming\aoc2021\prob-2\src\prob_2\core.clj:16:16).
+; No such namespace: str
+clj꞉prob-2.core꞉> 
+; Syntax error compiling at (c:\programming\aoc2021\prob-2\src\prob_2\core.clj:16:16).
+; No such namespace: str
+clj꞉prob-2.core꞉> 
+nil
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (UnsupportedOperationException) at prob-2.core/recPos (form-init15969500150833463507.clj:14).
+; count not supported on this type: core$vals
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (ClassCastException) at prob-2.core/recPos (form-init15969500150833463507.clj:16).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (ClassCastException) at prob-2.core/recPos (form-init15969500150833463507.clj:16).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (ClassCastException) at cider.nrepl.middleware.debug/apply-instrumented-maybe (debug.clj:525).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (ClassCastException) at prob-2.core/recPos (form-init15969500150833463507.clj:16).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+; Execution error (ClassCastException) at cider.nrepl.middleware.debug/apply-instrumented-maybe (debug.clj:525).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉prob-2.core꞉> 
+[5 0]
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos
+clj꞉prob-2.core꞉> 
+[15 10]
+clj꞉prob-2.core꞉> 
+#'prob-2.core/solve1
+clj꞉prob-2.core꞉> 
+#'prob-2.core/input-file
+clj꞉prob-2.core꞉> 
+[1845 916]
+clj꞉prob-2.core꞉> 
+#'prob-2.core/solve1
+clj꞉prob-2.core꞉> 
+1690020
+clj꞉prob-2.core꞉> 
+; Syntax error (IllegalArgumentException) compiling recur at (c:\programming\aoc2021\prob-2\src\prob_2\core.clj:43:7).
+; Mismatched argument count to recur, expected: 3 args, got: 2
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos2
+clj꞉prob-2.core꞉> 
+[15 10]
+clj꞉prob-2.core꞉> 
+; Execution error (IndexOutOfBoundsException) at prob-2.core/recPos2 (form-init15969500150833463507.clj:40).
+; null
+clj꞉prob-2.core꞉> 
+#'prob-2.core/recPos2
+clj꞉prob-2.core꞉> 
+[15 60 10]
+clj꞉prob-2.core꞉> 
+#'prob-2.core/solve2
+clj꞉prob-2.core꞉> 
+; Execution error (IndexOutOfBoundsException) at prob-2.core/recPos2 (form-init15969500150833463507.clj:39).
+; null
+clj꞉prob-2.core꞉> 
+#'prob-2.core/solve2
+clj꞉prob-2.core꞉> 
+1408487760
+clj꞉prob-2.core꞉> 

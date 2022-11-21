@@ -1,0 +1,204 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"1.0.0"] -- update-in :plugins conj [cider/cider-nrepl,"0.28.5"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉prob-4.core꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉prob-4.core꞉> 
+nil
+clj꞉prob-4.core꞉> 
+#'prob-4.core/input-file
+clj꞉prob-4.core꞉> 
+#'prob-4.core/findMaxPostion
+clj꞉prob-4.core꞉> 
+#'prob-4.core/findMinOfBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/findBestBoard
+clj꞉prob-4.core꞉> 
+([[[22 13 17 11 0] [8 2 23 4 24] [21 9 14 16 7] [6 10 3 18 5] [1 12 20 15 19]] 13]
+ [[[3 15 0 2 22] [9 18 13 17 5] [19 8 7 25 23] [20 11 10 24 4] [14 21 16 12 6]] 14]
+ [[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]] 11])
+clj꞉prob-4.core꞉> 
+; Syntax error (ArityException) compiling at (c:\programming\aoc2021\prob-4\src\prob_4\core.clj:45:5).
+; Wrong number of args (1) passed to: clojure.core/for
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+; Execution error (IllegalArgumentException) at prob-4.core/eval8124$scoreBoard$iter$fn$fn$iter$fn$iter$fn (form-init12467024053415347472.clj:47).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+; Execution error (IllegalArgumentException) at prob-4.core/eval8124$scoreBoard$iter$fn$fn$iter$fn$iter$fn (form-init12467024053415347472.clj:47).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+; Execution error (IllegalArgumentException) at prob-4.core/eval8297$scoreBoard$iter$fn$fn$iter$fn$iter$fn (form-init12467024053415347472.clj:47).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+; Execution error (IllegalArgumentException) at prob-4.core/eval8297$scoreBoard$iter$fn$fn$iter$fn$iter$fn (form-init12467024053415347472.clj:47).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+; Execution error (IllegalArgumentException) at prob-4.core/eval8494$scoreBoard$iter$fn$fn$iter$fn$iter$fn (form-init12467024053415347472.clj:47).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+QUIT
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+; Execution error (ArityException) at prob-4.core/eval8791$scoreBoard$iter$fn$fn$iter$fn$fn (form-init12467024053415347472.clj:52).
+; Wrong number of args (2) passed to: clojure.core/inc
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+188
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+0
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+00
+clj꞉prob-4.core꞉> 
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+00
+clj꞉prob-4.core꞉> 
+; Syntax error (ArityException) compiling at (c:\programming\aoc2021\prob-4\src\prob_4\core.clj:46:3).
+; Wrong number of args (3) passed to: clojure.core/for
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+; Execution error (NullPointerException) at prob-4.core/eval9587$scoreBoard$iter$fn$fn (form-init12467024053415347472.clj:48).
+; Cannot invoke "Object.getClass()" because "x" is null
+clj꞉prob-4.core꞉> 
+hkhnil
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+00
+clj꞉prob-4.core꞉> 
+; Syntax error compiling at (c:\programming\aoc2021\prob-4\src\prob_4\core.clj:56:6).
+; Unable to resolve symbol: positions in this context
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh00
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh00
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh00
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh0; Execution error (IllegalArgumentException) at prob-4.core/eval9918 (form-init12467024053415347472.clj:59).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+910511112101316161522319201822862526212019224141315637818122430hkh1884512
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+hkh1884512
+clj꞉prob-4.core꞉> 
+#'prob-4.core/scoreBoard
+clj꞉prob-4.core꞉> 
+[[14 21 17 24 4] [10 16 15 9 19] [18 8 23 26 20] [22 11 13 6 5] [2 0 12 3 7]]
+4512
+clj꞉prob-4.core꞉> 
