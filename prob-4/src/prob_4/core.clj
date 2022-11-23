@@ -8,7 +8,7 @@
   (println "Hello, World!"))
 
 
-(def input-file "C:\\programming\\aoc2021\\prob-4\\input.txt")
+(def input-file "d:\\programming\\aoc2021\\prob-4\\input.txt")
 
 (defn findMaxPostion [numbers positions]
   (apply max (for [numb numbers]
@@ -54,58 +54,41 @@
   (* (nth positions lastpos) @sum))
 
 (scoreBoard [[14 21 17 24  4] [10 16 15  9 19] [18  8 23 26 20] [22 11 13  6  5] [2  0 12  3  7]] 11 [7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1] )
+(slurp input-file)
 
+(defn parseBoards [instring boards]
+  ;(println instring)
+  (if (<=  (count instring) 1)
+    boards
+    (let [board-strings (subvec instring 1 6)]
+      (recur (subvec instring 6) (conj boards (for [bs board-strings] (map #(Integer/parseInt %) (str/split (str/trim bs) #"\s+"))))))))
+
+(parseBoards (vec (rest (str/split (slurp input-file) #"\r\n"))) [])
 
 (defn solve1 [file]
-  (let [invals (str/split (slurp file) #"\n")
-        ret (countCommon invals)]
-    (* (Long/parseLong (reduce str (map first ret)) 2)
-       (Long/parseLong (reduce str (map second ret)) 2))))
-
-(solve1 input-file)
-
-(defn findOxy [instrings pos]
-  (if (= 1 (count instrings))
-    (first instrings)
-    (let [nms (frequencies (map #(nth % pos) instrings))
-          ones (or (get nms \1) 0)
-          zeroes (or (get nms \0) 0)
-          new-instrs (filter #(= (if (>= ones zeroes) \1 \0) (nth % pos)) instrings)
-          ]
-      
-      (recur new-instrs (inc pos)))
-    )
-  )
-
-(findOxy ["00100" "11110" "10110" "10111" "10101" "01111" "00111" "11100" "10000" "11001" "00010" "01010"] 0)
-
-(defn findCO2 [instrings pos]
-  (if (= 1 (count instrings))
-    (first instrings)
-    (let [nms (frequencies (map #(nth % pos) instrings))
-          ones (or (get nms \1) 0)
-          zeroes (or (get nms \0) 0)
-          new-instrs (filter #(= (if (>= ones zeroes) \0 \1) (nth % pos)) instrings)
-          ]
-      
-      (recur new-instrs (inc pos)))
-    )
-  )
-
-(findCO2 ["00100" "11110" "10110" "10111" "10101" "01111" "00111" "11100" "10000" "11001" "00010" "01010"] 0)
-
-(defn solve2 [file]
-  (let [invals (str/split (slurp file) #"\n")
-        oxy (findOxy invals)
-        co2 (findCO2 invals)
+  (let [invals (str/split (slurp file) #"\r\n")
+        numbs (map #(Integer/parseInt %) (str/split (first invals) #","))
+        boards (parseBoards (vec (rest invals)) [])
+        boardslow (findBestBoard boards numbs)
+        best-board (first (sort-by second < boardslow))
         ]
-    (* (Long/parseLong (reduce str (map first ret)) 2)
-       (Long/parseLong (reduce str (map second ret)) 2))))
+    (scoreBoard (first best-board) (second best-board) numbs)
+    ))
+
+  (solve1 input-file)
+(defn solve2 [file]
+  (let [invals (str/split (slurp file) #"\r\n")
+        numbs (map #(Integer/parseInt %) (str/split (first invals) #","))
+        boards (parseBoards (vec (rest invals)) [])
+        boardslow (findBestBoard boards numbs)
+        best-board (last (sort-by second < boardslow))
+        ]
+    (scoreBoard (first best-board) (second best-board) numbs)
+    ))
 
 
 
 (solve2 input-file)
 
 
-(str/split (slurp input-file) #"\n")
 
