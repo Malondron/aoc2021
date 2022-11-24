@@ -81,7 +81,7 @@
 (defn analyzezerosixnine [zerosixnine one fourres eight]
   (let [zerores (analyzeZero zerosixnine fourres)
         sixnadnineres (analyzeSixandNines zerosixnine (first zerores) one)
-        findlast (findLast (first (first (second sixnadnineres))) eight)
+        findlast (findLast (first (second sixnadnineres)) eight)
         ]
     [zerores sixnadnineres findlast]
     )
@@ -97,8 +97,17 @@
      ) 
   )
 
-(defn get235 [symbs numbs]
-  
+
+(defn findSpec [ttf props symbs]
+  (first (filter #(and (str/includes? % (get @symbs (first props)))  (str/includes? % (get @symbs (second props)))  ) ttf))
+  )
+
+(defn get235 [ttf symbs]
+  (let [two (findSpec ttf [:three :five] symbs)
+        three (findSpec ttf [:three :six] symbs)
+        five (findSpec ttf [:two :six] symbs)]
+    [two three five]
+    )
   )
 
 (defn analyzeLine [line]
@@ -108,6 +117,7 @@
         seven (first (filter #(= 3 (count %)) line))
         four (first (filter #(= 4 (count %)) line))
         zerosixnine (filter #(= 6 (count %)) line)
+        twothreefive (filter #(= 5 (count %)) line)
         eight (first (filter #(= 7 (count %)) line))
         sevres (analyzeSeven seven one)
         fourres (analyzeFour four one)
@@ -129,13 +139,14 @@
     (let [seventh (findSev outsymbs)]
 
       (swap! outsymbs assoc :seven seventh))
-    
-    (let [twoThreeFive (get235 outsymbs outnumbs)])
-    
-    [zsnres @outsymbs @outnumbs])
+   (let [ttf (get235 twothreefive outsymbs)]
+     
 
-  )
+    (swap! outnumbs assoc :two (first ttf))
+    (swap! outnumbs assoc :three (second ttf))
+    (swap! outnumbs assoc :five (nth ttf 2))
+      @outnumbs)
+
+  ))
 
 (analyzeLine [ "acedgfb" "cdfbe" "gcdfa" "fbcad" "dab" "cefabd" "cdfgeb" "eafb" "cagedb" "ab"])
-
-(analyze 1) -> 3 = ab
