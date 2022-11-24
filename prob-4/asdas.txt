@@ -1,0 +1,64 @@
+    d
+e      a
+    f
+
+g        b
+    c
+
+6 0 9 cefabd cdfgeb cagedb
+                       0
+
+1: has 3 6
+7: has 1 3 6
+4: has 2 3 4 6
+6 9 0: all have 1 2 6 7 (6 does not have 3 -disambiguate 1)
+
+6 0 9 has 
+
+0 cagdeb
+1 ab
+2 
+3
+4 eabf
+5
+6 cdfgeb
+7
+8 acedgfb
+9 cefabd
+
+    d
+
+g        e
+    c
+
+a        b
+     f
+
+be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb |
+fdgacbe cefdb cefbgd gcbe
+
+0 6 9: cbdgef fgaecd agebfd
+
+0: agebfd
+1: be
+2: 
+3:
+4: gcbe
+5:
+6: fgaecd
+7: edb
+8: cfbegad
+9: cbdgef
+
+
+1-> 2 be 6 be
+7-> 1 what is not in 1
+4-> 2 4 is what is not in 1
+069 -> one of these will not have 2 and 4 (0) -> 2 is what is in 0 and 4 what is not
+   now we have 1 2 4
+   one of 6 9 does not have both of 1 (6) -> 3 part not in (6) 6 other one: 
+   differnece between 8 and 9 is 5. Rest is 7.
+
+
+
+
