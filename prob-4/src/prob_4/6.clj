@@ -24,7 +24,30 @@
     )
   )
 
-(count (simDays 18 [0 0 ]))
+(def countFish 
+ (memoize
+  (fn [days fish-timer]
+    (->> (iterate #(- % 7) (- days (inc fish-timer)))
+         (take-while (complement neg?))
+         (map #(countFish % 8)) 
+         (reduce + 1)
+         ))))
+
+
+(def countFishMem (memoize countFish))
+  
+  
+
+  (countFish 8 3))
+
+
+(last (str/split (str/trim (slurp input-file)) #",")))
+
+(->>  (mapv parse-long (str/split (str/trim (slurp input-file)) #","))
+     (map (partial countFish 256))
+     (reduce +)
+     )
+(count (simDays 18 [3 4 3 1 2]))
 (* 2 (Math/pow 2 (Math/floor (/ 7 9))))
 (* 2 (Math/pow 2 (Math/floor (/ 7 7))))
 (slurp input-file)
