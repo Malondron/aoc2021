@@ -150,3 +150,51 @@
   ))
 
 (analyzeLine [ "acedgfb" "cdfbe" "gcdfa" "fbcad" "dab" "cefabd" "cdfgeb" "eafb" "cagedb" "ab"])
+
+(defn parse-input-2 [file]
+   (map #(str/split %   #"\|") (str/split (slurp file) #"\n"))
+  )
+
+(parse-input-2 input-file)
+( = (set "jh") (set "hj"))
+
+
+(defn get-numb [numbs val]
+  (cond 
+    (= (set val) (set (get numbs :zero))) 0
+    (= (set val) (set (get numbs :one))) 1
+    (= (set val) (set (get numbs :two))) 2
+    (= (set val) (set (get numbs :three))) 3
+    (= (set val) (set (get numbs :four))) 4
+    (= (set val) (set (get numbs :five))) 5
+    (= (set val) (set (get numbs :six))) 6
+    (= (set val) (set (get numbs :seven))) 7
+    (= (set val) (set (get numbs :eight))) 8
+    (= (set val) (set (get numbs :nine))) 9
+    )
+  )
+
+
+(defn countLine [line numbs]
+  (parse-long (reduce str (map #(get-numb numbs %) line)))
+  )
+
+(defn recurCount [lines sum]
+  (if (= 0 (count lines))
+    sum
+    (let [useline (first lines)
+          fp (str/split (str/trim (first useline)) #" ")
+          lp (str/split (str/trim (second useline)) #" ")
+          numbs (analyzeLine fp)
+          count (countLine lp numbs)]
+      (recur (rest lines) (+ sum count)))
+    )
+  )
+
+(defn solve2 [file]
+  (let [lines (parse-input-2 file)]
+    (recurCount lines 0)
+    ))
+
+(solve2 input-file)
+
