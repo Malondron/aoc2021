@@ -52,3 +52,30 @@
 (solve1 (slurp input-file) start-chars end-chars)
 (map #(parseErr % start-chars end-chars []) (parse-input large-test-input))
 
+(defn scoreLine [line pos pts]
+  (if  (= 0 (count line))
+    pts
+    (recur (rest line) (inc pos) (+ (* 5 pts) (case (first line) "(" 1 "[" 2 "{" 3 "<" 4))))
+  )
+
+()
+
+(defn solve2 [inp sc ec]
+  (let [chunks (parse-input inp)]
+    (map #(scoreLine % 0 0) (map #(reverse %) (filter #(not (number? %)) (map #(parseErr % sc ec []) chunks))))
+    ))
+
+
+(scoreLine (first (solve2 large-test-input start-chars end-chars)) 0  0)
+(solve2 large-test-input start-chars end-chars)
+(let [res (sort (solve2 large-test-input start-chars end-chars))
+      len (count res)
+      ]
+  (nth res (dec (/ (+ 1 len) 2)))
+  )
+
+(let [res (sort (solve2 (slurp input-file) start-chars end-chars))
+      len (count res)
+      ]
+  (nth res (dec (/ (+ 1 len) 2)))
+  )
