@@ -37,6 +37,7 @@
 
 
 (def octGrid (atom (parse-input (slurp input-file))))
+(def octGrid (atom (parse-input test-input)))
 (get @octGrid "56")
 (swap! octGrid update-in ["56"] inc)
 
@@ -108,4 +109,24 @@
   )
   )
 
+(defn solv2 [octGrid xmax ymax step flashes]
+  (if (> @flashes 0)
+   step 
+    (do
+      (reset! flashes  0)
+      (doseq [x (range (inc xmax))
+              y (range (inc ymax))]
+        (makeOctStep octGrid [x y] xmax ymax))
+      (doseq [x (range (inc xmax))
+              y (range (inc ymax))]
+        (when (= -1 (get @octGrid (str x y)))
+          (swap! flashes inc)
+          (swap! octGrid assoc (str x y) 0)))
+      (when (not (= @flashes (* (+ 1 xmax) (+ 1 ymax))))
+        (reset! flashes -1) 
+        )
+      (recur octGrid xmax ymax (inc step) flashes ))))
+
+(solv2 octGrid 9 9 0 count)
+(solv2 octGrid 9 9 100 0 count)
 (printGrid octGrid 9 9)
