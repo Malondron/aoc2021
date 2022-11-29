@@ -84,5 +84,18 @@ fold along x=5")
     )
   )
 
+(defn allInstrs [instrs paper xmax ymax]
+  (if (= 0 (count instrs))
+    [paper xmax ymax]
+    (let [newPaper (dotoPaper paper (first instrs) xmax ymax)]
+      (recur (rest instrs) (first newPaper) (second newPaper) (nth newPaper 2))
+      )
+    )
+  )
+
 (count (first (dotoPaper paper (first instructions) 11 15)))
-(count (first (dotoPaper paper-p1 (first instructions-p1) 11 15)))
+(apply max (map second paper-p1))
+(count (first (dotoPaper paper-p1 (first instructions-p1) 1310 894)))
+(let [finals (allInstrs instructions-p1 paper-p1 1310 894)]
+  (printPap (first finals) (second finals) (nth finals 2))
+  )
