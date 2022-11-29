@@ -82,6 +82,29 @@ start-RW"
   (and (Character/isLowerCase (first el)) (.contains visited el ))
   )
 
+(frequencies [4 5 6 9 0 3 4 6])
+
+(defn moreThanOneVis? [el visited]
+  (let [numbs (frequencies visited)
+        ks (keys numbs)
+        manys (remove nil? (for [k ks :when (and (Character/isLowerCase (first k)) (> (get numbs k) 1))] k))
+        ]
+    (if (> (count manys) 0)
+      (let [nel (get numbs el)]
+        (if (and nel (> nel  0))
+          true
+          false))
+      false
+      )
+    )
+
+  )
+
+(defn notAllowed-2 [el visited]
+;  (println [el visited (or (= "start" el) (and (Character/isLowerCase (first el)) (moreThanOneVis? el visited)))])
+  (or (= "start" el) (and (Character/isLowerCase (first el)) (moreThanOneVis? el visited)))
+  )
+
 (defn walkFromTo [pthmp to visited corr-paths]
   (if (= to (last visited))
     (conj corr-paths visited)
@@ -89,11 +112,20 @@ start-RW"
           poss-moves (filter #(not (notAllowed % visited)) conn-moves)]
       
       (concat (mapcat #(walkFromTo pthmp to (conj visited %) corr-paths) poss-moves
-                      
-
-
-                      ))
       ))
-  )
+  )))
 
 (count (walkFromTo pathmap "end" ["start"] []))
+
+(defn walkFromTo-2 [pthmp to visited corr-paths]
+  (if (= to (last visited))
+    (conj corr-paths visited)
+    (let [conn-moves (get pthmp (last visited))
+          poss-moves (filter #(not (notAllowed-2 % visited)) conn-moves)]
+      
+      (concat (mapcat #(walkFromTo-2 pthmp to (conj visited %) corr-paths) poss-moves
+      ))
+  )))
+
+
+(count (walkFromTo-2 pathmap "end" ["start"] []))
