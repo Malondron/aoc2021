@@ -30,13 +30,24 @@
 (parse-input test-input)
 
 (defn solv1 [elves]
-  (apply max (map #(reduce + %) elves))
+  (->>
+   elves
+   (map #(reduce + %))
+   (apply max))
+  ;(apply max (map #(reduce + %) elves))
   )
 (solv1 (parse-input test-input))
 (solv1 (parse-input (slurp input-file)))
 
 (defn solv2 [elves]
-   (reduce + (take 3 (sort > (map #(reduce + %) elves))))
+  (->>
+   elves
+   (map #(reduce + %))
+   (sort >)
+   (take 3)
+   (reduce +)
+   )
+  ; (reduce + (take 3 (sort > (map #(reduce + %) elves))))
   )
 (solv2 (parse-input test-input))
 (solv2 (parse-input (slurp input-file)))
