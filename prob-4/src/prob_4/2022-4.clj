@@ -28,8 +28,50 @@
         sc (map parse-long (str/split s #"-"))
         ]
 (or (and (>= (second sc) (first fc) (first sc)  )  (<= (first sc ) (second fc) (second sc))  )
-    (and (>= (first sc) (first fc))  (>= (second sc) (second fc))  ))
+    (and (>= (second fc) (first sc) (first fc)  )  (<= (first fc ) (second sc) (second fc))  )
+    )
     
     )
   )
- (checkContain (first (parse-input test-input))) 
+ (checkContain (nth (parse-input test-input) 4)) 
+
+(defn solv1 [lines sum]
+  (if (= 0 (count lines))
+    sum
+    (recur (rest lines) (+ sum (if ( checkContain (first lines)) 1 0)))
+    )
+  )
+
+(solv1 (parse-input test-input) 0)
+(solv1 (parse-input (slurp input-file)) 0)
+
+(defn overlap? [pair]
+  (let [f (first pair)
+        s (second pair)
+        fc (map parse-long (str/split f #"-"))
+        sc (map parse-long (str/split s #"-"))
+        ]
+
+
+   (or (>= (second sc) (first fc) (first sc)  )  (<= (first sc ) (second fc) (second sc)) 
+     (>= (second fc) (first sc) (first fc)  )  (<= (first fc ) (second sc) (second fc))  
+    )
+     )
+    
+       
+       
+    
+  )
+
+
+(defn solv2 [lines sum]
+  (if (= 0 (count lines))
+    sum
+    (recur (rest lines) (+ sum (if ( overlap? (first lines))  1 0)))
+    )
+  )
+
+ (overlap? (nth (parse-input test-input) 4)) 
+
+(solv2 (parse-input test-input) 0)
+(solv2 (parse-input (slurp input-file)) 0)
