@@ -92,3 +92,48 @@ move 1 from 1 to 2")
 
 (solv1 (parse-input test-input))
 (solv1 (parse-input (slurp input-file)))
+
+(defn makeMove2 [move stacks]
+  (let [movep (str/split move #" ")
+        nrblocks (parse-long (nth movep 1))
+        from (parse-long (nth movep 3))
+        to (parse-long (nth movep 5))
+        fromv (nth stacks (dec from))
+        frompos (count (filter #(not (= " " %)) fromv))
+        toadd (filter #(not (= " " %)) (drop (- frompos nrblocks) fromv ))
+        tov (nth stacks (dec to))
+        topos (count (filter #(not (= " " %)) tov))
+        ]
+    
+   ; (println (reduce + (map count  stacks)))
+    (for [s (range (count stacks))]
+      (if (= s (dec to))
+        (concat (take topos tov) toadd)
+        (if (= s (dec from)) 
+          (take (- frompos nrblocks) fromv)
+          (nth stacks s)
+          )
+        )
+      )
+    ) 
+  )
+
+(defn makeMoves2 [moves stacks]
+  (if (= 0 (count moves))
+    stacks
+    (recur (rest moves) (makeMove2 (first moves) stacks))
+    )
+  )
+
+(makeMoves (nth (parse-input test-input) 2) start)
+(defn solv1 [inp]
+  (let [start (buildStart inp)]
+    (apply str (map last (makeMoves (nth inp 2) start)))
+    
+    )
+  )
+
+(solv1 (parse-input test-input))
+(solv1 (parse-input (slurp input-file)))
+
+
